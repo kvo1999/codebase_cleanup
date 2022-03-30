@@ -8,6 +8,9 @@
 import os
 
 
+from app.utils import to_usd
+
+
 def to_usd(my_price):
     """
     this is a docstring. it tells us what this function is about,
@@ -19,6 +22,7 @@ def to_usd(my_price):
     """
     return '${:,.2f}'.format(my_price)
 
+  
 
 # checks to see if a products.csv file exists. If not, it uses the default
 if os.path.isfile(os.path.join(os.path.dirname(__file__), "..", "data", "products.csv")) == True:
