@@ -49,13 +49,13 @@ python app/game.py
 Run the inventory report:
 
 ```sh
-python app/groceries.py
+python -m app.groceries
 ```
 
 Run the Crypto report:
 
 ```sh
-python app/crypto.py
+python -m app.crypto
 ```
 
 Run the Stocks Report:
