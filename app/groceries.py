@@ -7,7 +7,22 @@
 
 import os
 
+
 from app.utils import to_usd
+
+
+def to_usd(my_price):
+    """
+    this is a docstring. it tells us what this function is about,
+    what it's respobsibilities are, 
+    what it's parameters are about, 
+    what this function will return
+
+    invoke like: to_usd(9.9999)
+    """
+    return '${:,.2f}'.format(my_price)
+
+  
 
 # checks to see if a products.csv file exists. If not, it uses the default
 if os.path.isfile(os.path.join(os.path.dirname(__file__), "..", "data", "products.csv")) == True:
@@ -47,6 +62,8 @@ avg_price = statistics.median(all_prices)
 
 print("---------")
 print("AVERAGE PRICE:", to_usd(avg_price))
+
+
 
 
 
