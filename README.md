@@ -31,10 +31,11 @@ Sign up for a [SendGrid Account](https://sendgrid.com/), verify single sender, t
 Set environment variables using a ".env" file approach:
 
 ```sh
-ALPHAVANTAGE_API_KEY="..."
+touch .env
+echo ALPHAVANTAGE_API_KEY="..." >> .env
 
-SENDER_ADDRESS="example@gmail.com"
-SENDGRID_API_KEY="SG...."
+echo SENDER_ADDRESS="example@gmail.com" >> .env
+echo SENDGRID_API_KEY="SG...." >> .env
 ```
 
 
@@ -43,7 +44,7 @@ SENDGRID_API_KEY="SG...."
 Run the game:
 
 ```sh
-python app/game.py
+python -m app.game
 ```
 
 Run the inventory report:
@@ -62,6 +63,12 @@ python -m app.crypto
 Run the Stocks Report:
 
 ```sh
-python app/stocks.py
+python -m app.stocks
 ```
 
+## Testing
+To test functions:
+
+```sh
+pytest
+```
