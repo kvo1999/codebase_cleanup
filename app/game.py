@@ -4,6 +4,7 @@ from random import choice
 
 
 
+
 def determine_winner(user_choice, computer_choice):
     """
     this function will determine the winner of the game based on
@@ -37,11 +38,13 @@ def determine_winner(user_choice, computer_choice):
 
 
 if __name__ == "__main__":
+
     valid_selections = ["rock", "paper", "scissors"] # only have to update in one place
 
     #
     # USER SELECTION
     #
+
 
     u = input("Please choose one of 'Rock', 'Paper', or 'Scissors': ").lower()
     print("USER CHOICE:", u)
@@ -54,11 +57,14 @@ if __name__ == "__main__":
     #
 
     c = choice(valid_selections)
+
+
     print("COMPUTER CHOICE:", c)
 
     #
     # DETERMINATION OF WINNER
     #
+
 
     #if u == "rock" and c == "rock":
     #    print("It's a tie!")
@@ -88,3 +94,4 @@ if __name__ == "__main__":
         print("COMPUTER WON")
     else:
         print("TIE")
+
