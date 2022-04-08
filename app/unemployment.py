@@ -4,18 +4,21 @@ print("UNEMPLOYMENT REPORT...")
 
 
 import os
-import json
-from dotenv import load_dotenv
-import requests
+#import json
+#from dotenv import load_dotenv
+#import requests
+from app.alphavantage_service import fetch_unemployment_data
 
-load_dotenv()
+#load_dotenv()
 
-ALPHAVANTAGE_API_KEY = os.getenv("ALPHAVANTAGE_API_KEY", default="demo")
+#ALPHAVANTAGE_API_KEY = os.getenv("ALPHAVANTAGE_API_KEY", default="demo")
+
+fetch_unemployment_data()
 
 # docs: https://www.alphavantage.co/documentation/#unemployment
-url = f"https://www.alphavantage.co/query?function=UNEMPLOYMENT&apikey={ALPHAVANTAGE_API_KEY}"
-response = requests.get(url)
-parsed_response = json.loads(response.text)
+#url = f"https://www.alphavantage.co/query?function=UNEMPLOYMENT&apikey={ALPHAVANTAGE_API_KEY}"
+#response = requests.get(url)
+#parsed_response = json.loads(response.text)
 #print(parsed_response)
 
 data = parsed_response["data"]

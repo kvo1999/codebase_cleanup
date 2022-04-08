@@ -11,23 +11,23 @@ import os
 from app.utils import to_usd
 
 
-def to_usd(my_price):
-    """
-    this is a docstring. it tells us what this function is about,
-    what it's respobsibilities are, 
-    what it's parameters are about, 
-    what this function will return
+#def to_usd(my_price):
+   # """
+    #this is a docstring. it tells us what this function is about,
+    #what it's respobsibilities are, 
+    #what it's parameters are about, 
+    #what this function will return
 
-    invoke like: to_usd(9.9999)
-    """
-    return '${:,.2f}'.format(my_price)
+    #invoke like: to_usd(9.9999)
+    #"""
+    #return '${:,.2f}'.format(my_price)
 
-  
+filepath = os.path.join(os.path.dirname(__file__), "..", "data", "products.csv")
 
 # checks to see if a products.csv file exists. If not, it uses the default
-if os.path.isfile(os.path.join(os.path.dirname(__file__), "..", "data", "products.csv")) == True:
+if os.path.isfile(filepath) == True:
     print("USING CUSTOM PRODUCTS CSV FILE...")
-    csv_filepath = os.path.join(os.path.dirname(__file__), "..", "data", "products.csv")
+    csv_filepath = filepath
 else:
     print("USING DEFAULT PRODUCTS CSV FILE...")
     csv_filepath = os.path.join(os.path.dirname(__file__), "..", "data", "default_products.csv")
@@ -49,16 +49,13 @@ print("---------")
 print("THERE ARE", len(products), "PRODUCTS:")
 print("---------")
 
-for p in products:
-    print("..." + p["name"] + "   " + to_usd(p["price"]))
-
-
 all_prices = []
 for p in products:
     all_prices.append(float(p["price"]))
+    print("..." + p["name"] + "   " + to_usd(p["price"]))
 
 import statistics
-avg_price = statistics.median(all_prices)
+avg_price = statistics.mean(all_prices)
 
 print("---------")
 print("AVERAGE PRICE:", to_usd(avg_price))
