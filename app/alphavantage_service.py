@@ -23,6 +23,7 @@ def fetch_crypto_data(symbol):
 
 
 
+
 def fetch_stocks_data(symbol):
     """
     this function allows us to import the stocks data of our choosing
@@ -44,3 +45,4 @@ def fetch_unemployment_data():
     response = requests.get(url)
     parsed_response = json.loads(response.text)
     return parsed_response 
+

@@ -17,6 +17,7 @@ from app.alphavantage_service import fetch_crypto_data
 symbol = input("Please input a crypto symbol (default: 'BTC'): ") or "BTC"
 parsed_response= fetch_crypto_data(symbol)
 
+
 #url = f"https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&market=USD&symbol={symbol}&apikey={ALPHAVANTAGE_API_KEY}"
 #response = requests.get(url)
 #parsed_response = json.loads(response.text)
