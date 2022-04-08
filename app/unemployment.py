@@ -13,7 +13,7 @@ from app.alphavantage_service import fetch_unemployment_data
 
 #ALPHAVANTAGE_API_KEY = os.getenv("ALPHAVANTAGE_API_KEY", default="demo")
 
-fetch_unemployment_data()
+parsed_response= fetch_unemployment_data()
 
 # docs: https://www.alphavantage.co/documentation/#unemployment
 #url = f"https://www.alphavantage.co/query?function=UNEMPLOYMENT&apikey={ALPHAVANTAGE_API_KEY}"
